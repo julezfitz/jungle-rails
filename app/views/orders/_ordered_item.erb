@@ -1,0 +1,19 @@
+    <tr>
+      <td>
+        <%= image_tag ordered_item.product.image.tiny %>
+      </td>
+      <td>
+        <h4><%= ordered_item.product.name %></h4>
+        <br>
+        <p><%= ordered_item.product.description %></p>
+      </td>
+      <td>
+        <%= number_to_currency ordered_item.product.price_cents %>
+      </td>
+      <td>
+        <%= ordered_item.product.quantity %>
+      </td>
+      <td>
+        <%= ordered_item.product.price * ordered_item.quantity %>
+      </td>
+    </tr>

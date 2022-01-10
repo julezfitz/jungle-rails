@@ -2,6 +2,8 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @ordered_items = @order.line_items
+    # @ordered_items = ActiveRecord::Base.connection.execute("SELECT line_items.*, products.* FROM products JOIN line_items ON products.id = line_items.product_id WHERE line_items.order_id = #{params[:id]}")
   end
 
   def create
