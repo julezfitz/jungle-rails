@@ -8,12 +8,12 @@
         <p><%= ordered_item.product.description %></p>
       </td>
       <td>
-        <%= number_to_currency ordered_item.product.price_cents %>
+        <%= number_to_currency ordered_item.product.price %>
       </td>
       <td>
         <%= ordered_item.product.quantity %>
       </td>
       <td>
-        <%= ordered_item.product.price * ordered_item.quantity %>
+        <%= number_to_currency ordered_item.product.price * ordered_item.product.quantity %>
       </td>
     </tr>
