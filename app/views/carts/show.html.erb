@@ -4,6 +4,15 @@
     <h1>My Cart</h1>
   </header>
 
+ <% if cart.empty? %>
+    <div id="error_explanation">
+      <h2>
+       Your cart is empty. Check out some of our
+          <%= link_to 'amazing products', :root %>
+      </h2>
+    </div>
+  <% else %>
+
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -48,5 +57,7 @@
       <% end %>
     </div>
   </div>
+
+  <% end %>
 
 </section>
