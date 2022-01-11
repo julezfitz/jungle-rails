@@ -5,6 +5,7 @@ class Admin::SalesController < ApplicationController
   end
 
   def new
+    @sale = Sale.new
   end
 
   def create
@@ -15,6 +16,12 @@ class Admin::SalesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @sale = Sale.find params[:id]
+    @sale.destroy
+    redirect_to [:admin, :sales], notice: 'Sale deleted!'
   end
 
   private
