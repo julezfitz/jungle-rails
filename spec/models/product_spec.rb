@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe Product, type: :model do
   
   describe 'Validations' do
-    # validation tests/examples here
    
     it "validates successful create" do
       cat1 = Category.find_or_create_by! name: 'Test'
