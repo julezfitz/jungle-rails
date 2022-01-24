@@ -17,22 +17,15 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
       end
     end
 
-  scenario "They see product details" do
+  scenario "They can navigate to see product details" do
     # ACT
     visit root_path
 
-    #first(class: 'product').click_link('prod-desc-link')
-    #first('.product > prod-desc-link').click
-    first('.prod-desc-link').click
-    expect(page).to have_css('.prod-desc-link', visible: true)
-    #find(first(class: 'product')).visible?
-    #first(:h4).click
-
-
+    find("h4", match: :first).click
 
     # DEBUG / VERIFY
-    save_screenshot
-  
+    save_screenshot  
+    
     expect(page).to have_css('.product-detail', visible: true)
   end
 
