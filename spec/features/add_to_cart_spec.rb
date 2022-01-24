@@ -24,16 +24,10 @@ RSpec.feature "AddToCarts", type: :feature, js: true do
       click_button "Add"
     end
 
-   # find(first(:button, 'Add')).click
-
-    #find("h4", match: :first).click
-
     # DEBUG / VERIFY
     save_screenshot  
     
     expect(page).to have_content('My Cart (1)')
-   # to have('.fa-shopping-cart', text: ' My Cart (1) ')
-
     
   end
 
